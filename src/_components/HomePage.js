@@ -1,58 +1,50 @@
+import _ from "lodash";
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PunkAPI from 'punkapi-lib';
+
+import SearchBar from './SearchBar';
+import BeerList from './BeerList';
+
 
 class HomePage extends Component {
-    render(){
-        return (
-            <div className="row">
-			    <div className="col-md-6 col-md-offset-3">
-				<div className="panel panel-login">
-					<div className="panel-heading">
-						<div className="row">
-							<div className="col-xs-6">
-								<a href="#" className="active" id="login-form-link">Login</a>
-							</div>
-						</div>
-						<hr />
-					</div>
-					<div className="panel-body">
-						<div className="row">
-							<div className="col-lg-12">
-								<form id="login-form" role="form">
-									<div className="form-group">
-										<input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Username"  />
-									</div>
-									<div className="form-group">
-										<input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password" />
-									</div>
-									<div className="form-group text-center">
-										<input type="checkbox" tabIndex="3" className="" name="remember" id="remember" />
-										<label htmlFor="remember"> Remember Me</label>
-									</div>
-									<div className="form-group">
-										<div className="row">
-											<div className="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In" />
-											</div>
-										</div>
-									</div>
-									<div className="form-group">
-										<div className="row">
-											<div className="col-lg-12">
-												<div className="text-center">
-													<a href="https://phpoll.com/recover" tabIndex="5" className="forgot-password">Forgot Password?</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			beers: PunkAPI.beers({})
+		};
+		this.handleLogout = this.handleLogout.bind(this);
+		this.beerSearch = this.beerSearch.bind(this);
+	}
+
+	handleLogout() {
+		// reset login status
+		// This need to be an action
+		localStorage.removeItem("user");
+	}
+
+	beerSearch(beer) {
+		const options = (beer) ? { beer_name: beer } : '';
+		this.setState({
+			beers: PunkAPI.beers(options)
+		});
+	}
+
+	render() {
+
+		const beerSeach = _.debounce(beer => {
+			this.beerSearch(beer);
+		}, 300);
+
+		return (
+			<div>
+				<p><Link onClick={this.handleLogout} to="/login">Logout</Link></p>
+				<SearchBar onSearchTermChange={beerSeach} />
+				<BeerList beers={this.state.beers} />
 			</div>
-		</div>
-        )
-    }
+		)
+	}
 }
 
 export default HomePage;
