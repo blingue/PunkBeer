@@ -7,9 +7,6 @@ import HomePage from './HomePage';
 import LoginPage from './LoginPage';
 import '../styles/App.css';
 
-
-
-
 class App extends Component {
 
     constructor(props){

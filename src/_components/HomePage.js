@@ -1,39 +1,58 @@
 import React, { Component } from 'react';
 
 class HomePage extends Component {
-
     render(){
         return (
             <div className="row">
-                <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                    <div className="card card-signin my-5">
-                    <div className="card-body">
-                        <h5 className="card-title text-center">Sign In</h5>
-                        <form className="form-signin">
-                        <div className="form-label-group">
-                            <input type="text" id="inputEmail" className="form-control" placeholder="Email address" required autofocus />
-                            <label for="inputEmail">Username</label>
-                        </div>
-
-                        <div className="form-label-group">
-                            <input type="password" id="inputPassword" className="form-control" placeholder="Password" required />
-                            <label for="inputPassword">Password</label>
-                        </div>
-
-                        <div className="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1" />
-                            <label className="custom-control-label" for="customCheck1">Remember password</label>
-                        </div>
-                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-                        <hr class="my-4" />
-                        </form>
-                    </div>
-                    </div>
-                </div>
-            </div>
+			    <div className="col-md-6 col-md-offset-3">
+				<div className="panel panel-login">
+					<div className="panel-heading">
+						<div className="row">
+							<div className="col-xs-6">
+								<a href="#" className="active" id="login-form-link">Login</a>
+							</div>
+						</div>
+						<hr />
+					</div>
+					<div className="panel-body">
+						<div className="row">
+							<div className="col-lg-12">
+								<form id="login-form" role="form">
+									<div className="form-group">
+										<input type="text" name="username" id="username" tabIndex="1" className="form-control" placeholder="Username"  />
+									</div>
+									<div className="form-group">
+										<input type="password" name="password" id="password" tabIndex="2" className="form-control" placeholder="Password" />
+									</div>
+									<div className="form-group text-center">
+										<input type="checkbox" tabIndex="3" className="" name="remember" id="remember" />
+										<label htmlFor="remember"> Remember Me</label>
+									</div>
+									<div className="form-group">
+										<div className="row">
+											<div className="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In" />
+											</div>
+										</div>
+									</div>
+									<div className="form-group">
+										<div className="row">
+											<div className="col-lg-12">
+												<div className="text-center">
+													<a href="https://phpoll.com/recover" tabIndex="5" className="forgot-password">Forgot Password?</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
         )
     }
-
 }
 
 export default HomePage;
