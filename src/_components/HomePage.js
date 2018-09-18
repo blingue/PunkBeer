@@ -36,7 +36,7 @@ class HomePage extends Component {
 		const beerSeach = _.debounce(beer => {
 			this.beerSearch(beer);
 		}, 300);
-
+		console.log(this.state.beers);
 		return (
 			<div>
 				<p><Link onClick={this.handleLogout} to="/login">Logout</Link></p>

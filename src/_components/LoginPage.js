@@ -3,7 +3,7 @@ import history from './History';
 
 class LoginPage extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         // reset login status
@@ -48,54 +48,52 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div className="row jumbotron">
-                <div className="col-md-6 col-md-offset-3">
-                    <div className="panel panel-login">
-                        <div className="panel-heading">
-                            <div className="row">
-                                <div className="col-xs-6">
-                                    <a href="#" className="active" id="login-form-link">Login</a>
+            <div className="col-sm-8 col-sm-offset-2">
+                <div className="row jumbotron">
+                    <div className="col-md-6 col-md-offset-3">
+                        <div className="panel panel-login">
+                            <div className="panel-heading">
+                                <div className="row">
+                                    <div className="col-xs-6">
+                                        <a href="#" className="active" id="login-form-link">Login</a>
+                                    </div>
                                 </div>
+                                <hr />
                             </div>
-                            <hr />
-                        </div>
-                        <div className="panel-body">
-                            <div className="row">
-                                <div className="col-lg-12">
-                                    <form id="login-form" role="form" onSubmit={this.handleSubmit}>
-                                        <div className="form-group">
-                                            <input type="text" name="username" className="form-control" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
-                                            {this.state.submitted && !this.state.username &&
-                                                <div className="help-block">Username is required</div>
-                                            }
-                                        </div>
-                                        <div className="form-group">
-                                            <input type="password" name="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
-                                            {this.state.submitted && !this.state.password &&
-                                                <div className="help-block">Password is required</div>
-                                            }
-                                        </div>
-                                        <div className="form-group text-center">
-                                            <input type="checkbox" tabIndex="3" className="" name="remember" id="remember" />
-                                            <label htmlFor="remember"> Remember Me</label>
-                                        </div>
-                                        <div className="form-group">
-                                            <div className="row">
-                                                <div className="col-sm-6 col-sm-offset-3">
-                                                    <input type="submit" name="login-submit" id="login-submit" tabIndex="4" className="form-control btn btn-login" value="Log In" />
-                                                </div>
+                            <div className="panel-body">
+                                <div className="row">
+                                    <div className="col-lg-12">
+                                        <form id="login-form" role="form" onSubmit={this.handleSubmit}>
+                                            <div className="form-group">
+                                                <input type="text" name="username" className="form-control" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
+                                                {this.state.submitted && !this.state.username &&
+                                                    <div className="help-block">Username is required</div>
+                                                }
                                             </div>
-                                        </div>
-                                        <div className="form-group">
-                                            <div className="row">
-                                                <div className="col-lg-12">
-                                                    <div className="text-center">
-                                                        <a href="" className="forgot-password" onClick={this.handleForgotPassWord}>Forgot Password?</a>
+                                            <div className="form-group">
+                                                <input type="password" name="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
+                                                {this.state.submitted && !this.state.password &&
+                                                    <div className="help-block">Password is required</div>
+                                                }
+                                            </div>
+                                            <div className="form-group">
+                                                <div className="row">
+                                                    <div className="col-sm-6 col-sm-offset-3">
+                                                        <input type="submit" name="login-submit" id="login-submit" className="form-control btn btn-login" value="Log In" />
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                            <div className="form-group">
+                                                <div className="row">
+                                                    <div className="col-lg-12">
+                                                        <div className="text-center">
+                                                            <a href="" className="forgot-password" onClick={this.handleForgotPassWord}>Forgot Password?</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -10,9 +10,17 @@ const BeerList = props => {
     });
 
     return (
-        <ul className="col-md-10 list-group">
-            {beerItems}
-        </ul>
+
+        <div className="container">
+            <div className="row">
+                <div className="col-md-12">
+                    {beerItems}
+                </div>
+            </div>
+        </div>
+
+
+
     );
 };
 

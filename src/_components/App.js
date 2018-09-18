@@ -21,10 +21,10 @@ class App extends Component {
     constructor(props) {
         super(props);
     }
-    
+
     render() {
         return (
-            <div className="col-sm-8 col-sm-offset-2">
+            <div className="">
                 <Router history={history}>
                     <div>
                         <PrivateRoute exact path="/" component={HomePage} />
