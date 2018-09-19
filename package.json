@@ -8,15 +8,12 @@
     "start": "webpack-dev-server --open"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/blingue/PunkBeer.git"
+    "type": "git"
   },
   "author": "Medard Zamble",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/blingue/PunkBeer/issues"
   },
-  "homepage": "https://github.com/blingue/PunkBeer#readme",
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^7.1.2",

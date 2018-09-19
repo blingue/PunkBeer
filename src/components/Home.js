@@ -7,7 +7,7 @@ import SearchBar from './SearchBar';
 import BeerList from './BeerList';
 
 
-class HomePage extends Component {
+class Home extends Component {
 
 	constructor(props) {
 		super(props);
@@ -36,7 +36,7 @@ class HomePage extends Component {
 		const beerSeach = _.debounce(beer => {
 			this.beerSearch(beer);
 		}, 300);
-		console.log(this.state.beers);
+
 		return (
 			<div>
 				<p><Link onClick={this.handleLogout} to="/login">Logout</Link></p>
@@ -47,4 +47,4 @@ class HomePage extends Component {
 	}
 }
 
-export default HomePage;
+export default Home;

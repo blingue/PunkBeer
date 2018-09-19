@@ -1,5 +1,6 @@
 body {
-    padding-top: 90px;
+	padding-top: 90px;
+	font-size: 1.5rem;
 }
 .panel-login {
 	border-color: #ccc;
@@ -97,3 +98,13 @@ body {
 	background-color: #1CA347;
 	border-color: #1CA347;
 }
+
+.search-bar {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .search-bar input {
+	width: 60%;
+	text-align: center;
+  }

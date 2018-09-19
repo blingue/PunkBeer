@@ -2,11 +2,11 @@ import React from 'react';
 import BeerListItem from './BeerListItem';
 
 const BeerList = props => {
-    const beerItems = props.beers.map(beer =>{
+    const beerItems = props.beers.map(beer => {
         return (
-            <BeerListItem key={beer.id} 
-                beer={beer}/>
-          );
+            <BeerListItem key={beer.id}
+                beer={beer} />
+        );
     });
 
     return (
@@ -18,9 +18,6 @@ const BeerList = props => {
                 </div>
             </div>
         </div>
-
-
-
     );
 };
 

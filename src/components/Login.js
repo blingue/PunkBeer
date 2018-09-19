@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import history from './History';
 
-class LoginPage extends Component {
+class Login extends Component {
 
     constructor(props) {
         super(props);
@@ -104,4 +104,4 @@ class LoginPage extends Component {
     }
 }
 
-export default LoginPage;
+export default Login;
