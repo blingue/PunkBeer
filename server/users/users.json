@@ -1,0 +1,63 @@
+[
+  {
+    "username": "bigpeacock217",
+    "password": "eagle",
+    "acesss_level" : 1,
+    "role" : "user",
+    "email": "mezamble@example.com",
+    "gender": "female",
+    "phone_number": "(727)-033-9347",
+    "birthdate": 608022796,
+    "location": {
+      "street": "2431 predikherenkerkhof",
+      "city": "staphorst",
+      "state": "gelderland",
+      "postcode": 64265
+    },
+    "first_name": "melany",
+    "last_name": "idontknow",
+    "title": "miss",
+    "picture": "women/70.jpg",
+  },
+  {
+    "username": "purpleduck599",
+    "password": "davids",
+    "acesss_level" : 2,
+    "role" : "super-user",
+    "email": "nanna.pedersen@example.com",
+    "gender": "female",
+    "phone_number": "43672992",
+    "birthdate": 591428535,
+    "location": {
+      "street": "2177 fåborgvej",
+      "city": "aarhus",
+      "state": "syddanmark",
+      "postcode": 87547
+    },
+   
+    "first_name": "nanna",
+    "last_name": "pedersen",
+    "title": "ms",
+    "picture": "women/68.jpg"
+  },
+  {
+    "username": "whitefrog218",
+    "password": "forest",
+    "acesss_level" : 3,
+    "role" : "admin",
+    "email": "amelia.mercier@example.com",
+    "gender": "female",
+    "phone_number": "(168)-747-5950",
+    "birthdate": 1132298571,
+    "location": {
+      "street": "7454 rue duquesne",
+      "city": "echandens-denges",
+      "state": "vaud",
+      "postcode": 3811
+    },
+    "first_name": "amelia",
+    "last_name": "mercier",
+    "title": "madame",
+    "picture": "women/91.jpg"
+  }
+]
