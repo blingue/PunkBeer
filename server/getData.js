@@ -2,9 +2,9 @@
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
+const _ = require('lodash');
 
 module.exports = getData;
-
 
 function getData(req,res,pathName) {
   const mimeType = {
@@ -27,7 +27,17 @@ function getData(req,res,pathName) {
         const ext = path.parse(pathName).ext;
         // if the file is found, set Content-type and send data
         res.setHeader('Content-type', mimeType[ext] || 'text/plain' );
-        res.send(data);
+        const users = JSON.parse(data);
+        const username = req.query.username;
+        const password = req.query.password;
+        const user = _.filter(users, {username: username, password: password});
+        if(user.length>0){
+          res.statusCode = 200;
+          res.send(user[0]);
+        }else{
+          res.statusCode = 422;
+          res.end("Username or Password is incorrect");
+        }
       }
     });
   });

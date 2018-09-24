@@ -1,11 +1,13 @@
 [
   {
-    "username": "bigpeacock217",
-    "password": "eagle",
+    "username": "medy",
+    "password": "medy",
     "acesss_level" : 1,
     "role" : "user",
-    "email": "mezamble@example.com",
+    "email": "mzamble@example.com",
     "gender": "female",
+    "first_name": "melany",
+    "last_name": "idontknow",
     "phone_number": "(727)-033-9347",
     "birthdate": 608022796,
     "location": {
@@ -14,10 +16,8 @@
       "state": "gelderland",
       "postcode": 64265
     },
-    "first_name": "melany",
-    "last_name": "idontknow",
     "title": "miss",
-    "picture": "women/70.jpg",
+    "picture": "women/70.jpg"
   },
   {
     "username": "purpleduck599",
@@ -25,18 +25,17 @@
     "acesss_level" : 2,
     "role" : "super-user",
     "email": "nanna.pedersen@example.com",
+    "first_name": "nanna",
+    "last_name": "pedersen",
     "gender": "female",
     "phone_number": "43672992",
     "birthdate": 591428535,
     "location": {
-      "street": "2177 fåborgvej",
+      "street": "2177 fï¿½borgvej",
       "city": "aarhus",
       "state": "syddanmark",
       "postcode": 87547
     },
-   
-    "first_name": "nanna",
-    "last_name": "pedersen",
     "title": "ms",
     "picture": "women/68.jpg"
   },

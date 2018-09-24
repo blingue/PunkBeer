@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import history from './History';
+import { connect } from 'react-redux';
+
+import history from '../utils/history';
+import { userActions } from '../actions/user';
+//import { envConstants } from '../constants';
 
 class Login extends Component {
 
@@ -32,12 +36,12 @@ class Login extends Component {
 
         this.setState({ submitted: true });
         const { username, password } = this.state;
-        //const { dispatch } = this.props;
+        const { dispatch } = this.props;
         if (username && password) {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
-            //dispatch(userActions.login(username, password));
-            localStorage.setItem('user', JSON.stringify({ username, password }));
-            history.push('/');
+            dispatch(userActions.login(username, password));
+            // localStorage.setItem('user', JSON.stringify({ username, password }));
+            // history.push('/');
         }
     }
 
@@ -109,4 +113,17 @@ class Login extends Component {
     }
 }
 
-export default Login;
+function mapStateToProps(state) {
+    const { loggingIn } = state.authentication;
+    return {
+        loggingIn
+    };
+}
+
+// const connectedLoginPage = connect(mapStateToProps)(Login);
+// export { connectedLoginPage as Login }; 
+
+export default connect(mapStateToProps)(Login);
+// export { connectedLoginPage as Login };
+
+//export default Login;
