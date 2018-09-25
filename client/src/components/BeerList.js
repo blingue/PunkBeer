@@ -14,12 +14,14 @@ const BeerList = props => {
 
             <p> Total record(s) : {beerItems.length} </p>
             <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-12 beerItemlist">
                     {beerItems}
                 </div>
             </div>
         </div>
     );
 };
+
+
 
 export default BeerList;

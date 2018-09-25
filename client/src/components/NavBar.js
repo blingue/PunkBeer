@@ -10,13 +10,17 @@ class NavBar extends Component {
     render() {
         const { user } = this.props;
         return (
-            <div className="row container">
+            <div className="row jumbotron">
                 <div className="col-sm-4">
-                    <h1>Welcome {user.firstName} {user.lastName}!</h1>({user.role}) 
+                    <h2>Welcome {user.firstName} {user.lastName}!</h2>(Role : {user.role}) 
                 </div>
                 <div className="col-sm-4"></div>
                 <div className="col-sm-4">
-                    <p><Link onClick={this.handleLogout} to="/login">Logout</Link></p>
+                    <p className="logoutstyle pull-right">
+                        <Link onClick={this.handleLogout} to="/login">
+                            <span className="glyphicon glyphicon-log-out"></span> Logout
+                        </Link>
+                    </p>
                 </div>
             </div>
         );

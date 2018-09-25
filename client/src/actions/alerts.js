@@ -15,6 +15,5 @@ function error(message) {
 }
 
 function clear() {
-    console.log("========================================>cleared");
     return { type: envConstants.CLEAR };
 }

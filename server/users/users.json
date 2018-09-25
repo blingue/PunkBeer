@@ -10,14 +10,14 @@
     "lastName": "Zamble",
     "phoneNumber": "(727)-033-9347",
     "birthdate": 608022796,
+    "title": "Engineer",
+    "picture": "men/70.jpg",
     "location": {
       "street": "2431 predikherenkerkhof",
       "city": "staphorst",
       "state": "gelderland",
       "postcode": 64265
-    },
-    "title": "miss",
-    "picture": "men/70.jpg"
+    }
   },
   {
     "username": "superuser",
@@ -30,14 +30,14 @@
     "gender": "female",
     "phoneNumber": "43672992",
     "birthdate": 591428535,
+    "title": "Engineer",
+    "picture": "women/68.jpg",
     "location": {
       "street": "2177 f�borgvej",
       "city": "aarhus",
       "state": "syddanmark",
       "postcode": 87547
-    },
-    "title": "ms",
-    "picture": "women/68.jpg"
+    }
   },
   {
     "username": "admin",
@@ -45,18 +45,18 @@
     "acesssLevel" : 3,
     "role" : "admin",
     "email": "mzamble@example.com",
+    "firstName": "Angad",
+    "lastName": "Pun",
     "gender": "male",
     "phoneNumber": "(168)-747-5950",
     "birthdate": 1132298571,
+    "title": "Engineer",
+    "picture": "men/91.jpg",
     "location": {
       "street": "7454 rue duquesne",
       "city": "echandens-denges",
       "state": "vaud",
       "postcode": 3811
-    },
-    "firstName": "Angad",
-    "lastName": "Pun",
-    "title": "madame",
-    "picture": "men/91.jpg"
+    }
   }
 ]
