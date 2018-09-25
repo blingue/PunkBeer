@@ -1,14 +1,14 @@
 [
   {
-    "username": "medy",
-    "password": "medy",
-    "acesss_level" : 1,
+    "username": "user",
+    "password": "user",
+    "acesssLevel" : 1,
     "role" : "user",
     "email": "mzamble@example.com",
-    "gender": "female",
-    "first_name": "melany",
-    "last_name": "idontknow",
-    "phone_number": "(727)-033-9347",
+    "gender": "male",
+    "firstName": "Medard",
+    "lastName": "Zamble",
+    "phoneNumber": "(727)-033-9347",
     "birthdate": 608022796,
     "location": {
       "street": "2431 predikherenkerkhof",
@@ -17,18 +17,18 @@
       "postcode": 64265
     },
     "title": "miss",
-    "picture": "women/70.jpg"
+    "picture": "men/70.jpg"
   },
   {
-    "username": "purpleduck599",
-    "password": "davids",
-    "acesss_level" : 2,
+    "username": "superuser",
+    "password": "superuser",
+    "acesssLevel" : 2,
     "role" : "super-user",
-    "email": "nanna.pedersen@example.com",
-    "first_name": "nanna",
-    "last_name": "pedersen",
+    "email": "mzamble@example.com",
+    "firstName": "Alicia",
+    "lastName": "Francis",
     "gender": "female",
-    "phone_number": "43672992",
+    "phoneNumber": "43672992",
     "birthdate": 591428535,
     "location": {
       "street": "2177 f�borgvej",
@@ -40,13 +40,13 @@
     "picture": "women/68.jpg"
   },
   {
-    "username": "whitefrog218",
-    "password": "forest",
-    "acesss_level" : 3,
+    "username": "admin",
+    "password": "admin",
+    "acesssLevel" : 3,
     "role" : "admin",
-    "email": "amelia.mercier@example.com",
-    "gender": "female",
-    "phone_number": "(168)-747-5950",
+    "email": "mzamble@example.com",
+    "gender": "male",
+    "phoneNumber": "(168)-747-5950",
     "birthdate": 1132298571,
     "location": {
       "street": "7454 rue duquesne",
@@ -54,9 +54,9 @@
       "state": "vaud",
       "postcode": 3811
     },
-    "first_name": "amelia",
-    "last_name": "mercier",
+    "firstName": "Angad",
+    "lastName": "Pun",
     "title": "madame",
-    "picture": "women/91.jpg"
+    "picture": "men/91.jpg"
   }
 ]

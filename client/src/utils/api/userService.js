@@ -1,51 +1,35 @@
-import { GET_USER_URL } from '../../constants';
+import { apiConstants } from '../../constants/index';
 
-export const userService = {
-    login,
-    logout
-};
+export const userService = { login, logout };
 
 function login(username, password) {
-    const requestOptions = {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        mode: 'cors',
-        body: JSON.stringify({ username, password })
-    };
-
-    return fetch(`http://localhost:9500/getUser?username=${username}&password=${password}`)
-        .then(handleResponse)
-        .then(user => {
-            // login successful if there's a jwt token in the response
-            if (user.token) {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('user', JSON.stringify(user));
+    return fetch(`${apiConstants.GET_USER_URL}?username=${username}&password=${password}`)
+        .then(processResponse).then(user => {
+            if (user) { // login successful 
+                localStorage.setItem('user', JSON.stringify(user)); // store user in local storage for tracking
             }
-
             return user;
         });
+}
+
+function processResponse(response) {
+    return response.text().then(text => {
+        if(response.status === 200) return text && JSON.parse(text);
+        else{
+            if (response.ok === false) {
+                if (response.status === 401) {
+                    //location.reload(true);
+                }
+                // auto logout if 401 response returned from api
+                logout();
+                const error = text;
+                return Promise.reject(error);
+            }
+        }
+    });
 }
 
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
-}
-
-function handleResponse(response) {
-    console.log(response);
-    return response.text().then(text => {
-        const data = text && JSON.parse(text);
-        if (!response.ok) {
-            if (response.status === 401) {
-                // auto logout if 401 response returned from api
-                logout();
-                location.reload(true);
-            }
-
-            const error = (data && data.message) || response.statusText;
-            return Promise.reject(error);
-        }
-
-        return data;
-    });
 }

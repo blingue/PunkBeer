@@ -1,6 +1,6 @@
-import { constants } from '../constants';
+import { envConstants } from '../constants/index';
 import { userService } from '../utils/api/userService';
-//import { alertActions } from './';
+import { alertActions } from './alerts';
 import history from '../utils/history';
 
 export const userActions = {
@@ -10,28 +10,26 @@ export const userActions = {
 
 function logout() {
     userService.logout();
-    return { type: constants.LOGOUT };
+    return { type: envConstants.LOGOUT };
 }
 
 function login(username, password) {
     return dispatch => {
-        //dispatch(request({ username }));
+        dispatch(request({ username }));
         userService.login(username, password)
             .then(
                 user => { 
-                    //dispatch(success(user));
-                    localStorage.setItem('user', JSON.stringify({ username, password }));
+                    dispatch(success(user));
                     history.push('/');
                 },
                 error => {
-                    //dispatch(failure(error.toString()));
-                    //dispatch(alertActions.error(error.toString()));
-                    console.log("Error loggin");
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
                 }
             );
     };
 
-    // function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }
-    // function success(user) { return { type: userConstants.LOGIN_SUCCESS, user } }
-    // function failure(error) { return { type: userConstants.LOGIN_FAILURE, error } }
+    function request(user) { return { type: envConstants.LOGIN_REQUEST, user } }
+    function success(user) { return { type: envConstants.LOGIN_SUCCESS, user } }
+    function failure(error) { return { type: envConstants.LOGIN_FAILURE, error } }
 }

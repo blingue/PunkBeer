@@ -1,4 +1,5 @@
-import { envConstants } from '../constants';
+//import { envConstants } from '../constants';
+import { envConstants } from '../constants/index';
 
 let user = JSON.parse(localStorage.getItem('user'));
 const initialState = user ? { loggedIn: true, user } : {};

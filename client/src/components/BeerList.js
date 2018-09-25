@@ -11,13 +11,8 @@ const BeerList = props => {
 
     return (
         <div className="container">
-            {/*<div class="row">
-                <div className="col-md-5"></div>
-                <div className="loader"></div>
-                <div className="col-md-5"></div>
-            </div>
-            */}
 
+            <p> Total record(s) : {beerItems.length} </p>
             <div className="row">
                 <div className="col-md-12">
                     {beerItems}

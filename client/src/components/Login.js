@@ -3,24 +3,20 @@ import { connect } from 'react-redux';
 
 import history from '../utils/history';
 import { userActions } from '../actions/user';
-//import { envConstants } from '../constants';
 
 class Login extends Component {
 
     constructor(props) {
         super(props);
-
         // reset login status
-        //this.props.dispatch(userActions.logout());
-        // create a reducer for this
-        //localStorage.removeItem("user");
-
+        this.props.dispatch(userActions.logout());
+        // set initial state
         this.state = {
             username: '',
             password: '',
             submitted: false
         };
-
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleForgotPassWord = this.handleForgotPassWord.bind(this);
@@ -40,8 +36,6 @@ class Login extends Component {
         if (username && password) {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             dispatch(userActions.login(username, password));
-            // localStorage.setItem('user', JSON.stringify({ username, password }));
-            // history.push('/');
         }
     }
 
@@ -51,14 +45,10 @@ class Login extends Component {
     }
 
     render() {
+
         return (
             <div className="col-sm-8 col-sm-offset-2">
-                <div className="row jumbotron">
-                    {/*
-                    <div className="col-md-6 col-md-offset-3 alert alert-danger">
-                        Username or Password is incorrect
-                    </div>
-                    */}
+                <div className="row">
                     <div className="col-md-6 col-md-offset-3">
                         <div className="panel panel-login">
                             <div className="panel-heading">
@@ -72,15 +62,15 @@ class Login extends Component {
                             <div className="panel-body">
                                 <div className="row">
                                     <div className="col-lg-12">
-                                        <form id="login-form" role="form" onSubmit={this.handleSubmit}>
+                                        <form id="login-form" role="form" autoComplete="off" onSubmit={this.handleSubmit}>
                                             <div className="form-group">
-                                                <input type="text" name="username" className="form-control" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
+                                                <input type="text" name="username" className="form-control" placeholder="Username" value={this.state.username} onChange={this.handleChange}/>
                                                 {this.state.submitted && !this.state.username &&
                                                     <div className="help-block">Username is required</div>
                                                 }
                                             </div>
                                             <div className="form-group">
-                                                <input type="password" name="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
+                                                <input type="password" name="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.handleChange}/>
                                                 {this.state.submitted && !this.state.password &&
                                                     <div className="help-block">Password is required</div>
                                                 }
@@ -120,10 +110,5 @@ function mapStateToProps(state) {
     };
 }
 
-// const connectedLoginPage = connect(mapStateToProps)(Login);
-// export { connectedLoginPage as Login }; 
-
-export default connect(mapStateToProps)(Login);
-// export { connectedLoginPage as Login };
-
-//export default Login;
+const connectedLoginPage = connect(mapStateToProps)(Login);
+export { connectedLoginPage as Login }; 
