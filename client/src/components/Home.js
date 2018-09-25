@@ -1,6 +1,5 @@
 import _ from "lodash";
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PunkAPI from 'punkapi-lib';
 
@@ -21,7 +20,7 @@ class Home extends Component {
 		this.getApiOptions = this.getApiOptions.bind(this);
 	}
 
-	getApiOptions(beer){
+	getApiOptions(){
 		const { user } = this.props;
 		const acesssLevel = user.acesssLevel;
 		let options = {};
@@ -42,13 +41,8 @@ class Home extends Component {
 	}
 
 	beerSearch(beer) {
-
 		let options = this.getApiOptions();
-		
-		
-		(beer) ? { beer_name: beer } : '';
-
-
+		if(beer){ options.beer_name = beer }
 		this.setState({
 			beers: PunkAPI.beers(options)
 		});
@@ -58,9 +52,7 @@ class Home extends Component {
 		const beerSeach = _.debounce(beer => {
 			this.beerSearch(beer);
 		}, 300);
-
-		console.log(this.state.beers);
-
+		
 		return (
 			<div>
 				<NavBar />
