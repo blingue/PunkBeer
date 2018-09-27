@@ -26,7 +26,7 @@ class App extends Component {
         return (
             <div>
                 {alert.message &&
-                    <div className="col-md-6 col-md-offset-3 alert alert-danger">
+                    <div className="col-md-4 col-md-offset-3 alert alert-danger">
                         {alert.message}
                     </div>
                 }

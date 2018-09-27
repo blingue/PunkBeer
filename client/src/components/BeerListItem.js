@@ -15,7 +15,7 @@ const BeerListItem = ({ beer }) => {
             <div className="column" style={columnDesStyle}>{beer.description.substr(0, 110)}</div>
           </div>
         </div>
-        <div class="card-footer">alc/vol: {abv}</div>
+        <div className="card-footer">alc/vol: {abv}</div>
       </div>
     </div>
   );

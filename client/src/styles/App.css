@@ -145,6 +145,11 @@ body {
 	padding-left:80px
   }
 
+  .alert-danger {
+    text-align: center !important;
+    margin-left: 370px !important;
+}
+
   /* Safari */
   @-webkit-keyframes spin {
 	0% { -webkit-transform: rotate(0deg); }
@@ -155,3 +160,29 @@ body {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
   }
+
+  .beerLoading {
+	display  : inline-block;
+	position : relative;
+	width    : 100%;
+	height   : 50px;
+  }
+  
+  .beerLoading .dot {
+	width            : 20px;
+	height           : 20px;
+	border           : 2px solid mediumaquamarine;
+	background-color : #fff;
+	color            : #fff;
+	display          : block;
+	position         : absolute;
+	border-radius    : 50%;
+	top              : 0;
+	bottom           : 0;
+	left             : 0;
+	right            : 0;
+	margin           : auto;
+	box-shadow       : 0 1px 1px rgba(0, 0, 0, .4);
+	animation        : loading 2s infinite;
+  }
+  
