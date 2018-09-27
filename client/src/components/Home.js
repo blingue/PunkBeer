@@ -52,7 +52,7 @@ class Home extends Component {
 		const beerSeach = _.debounce(beer => {
 			this.beerSearch(beer);
 		}, 300);
-		
+		console.log(this.state.beers);
 		return (
 			<div>
 				<NavBar />

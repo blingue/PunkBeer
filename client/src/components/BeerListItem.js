@@ -3,17 +3,19 @@ import React from 'react';
 const BeerListItem = ({ beer }) => {
   const imageUrl = beer.image_url;
   const title = beer.name;
+  const abv = beer.abv;
 
   return (
     <div style={divStyle}>
       <div className="card bg-light mb-3" style={cardStyle}>
-        <div className="card-header" style={cardHeader}>{title.substr(0, 30)}</div>
+        <div className="card-header text-truncate" style={cardHeader}>{title}</div>
         <div className="card-body">
           <div className="row">
             <div className="column" style={columnImgStyle}><img src={imageUrl} style={style} /></div>
             <div className="column" style={columnDesStyle}>{beer.description.substr(0, 110)}</div>
           </div>
         </div>
+        <div class="card-footer">alc/vol: {abv}</div>
       </div>
     </div>
   );
@@ -51,7 +53,6 @@ const columnDesStyle = {
 const cardHeader = {
   fontSize: '15px',
   fontWeight: 'bold'
-
 }
 
 export default BeerListItem;
